@@ -1,0 +1,89 @@
+// main: styles.less
+//Here are some mixins from Erik Flowers, all credits are going to him https://github.com/erikflowers
+//
+//
+//
+//Quick add no styles to a UL - either inline or block
+.ul-inline-no-style() {
+    margin: 0px;
+    list-style: none;
+    .clearfix;
+    li {
+        float: left;
+        display: block;
+    }
+}
+
+.ul-block-no-style() {
+    margin: 0px;
+    list-style: none;
+    .clearfix;
+}
+
+//An easy way to include just super standard 1px text shadows. No frills.
+.textShadowBlack(@shadow: 0 1px 0px rgba(0, 0, 0, 1)) {
+    text-shadow: @shadow;
+}
+
+.textShadowWhite(@shadow: 0 1px 0px rgba(255, 255, 255, 1)) {
+    text-shadow: @shadow;
+}
+
+//CSS Text Select Highlight
+// This is the mixin
+.highlight(@backgroundColor, @textColor) {
+     ::selection,
+    -moz::selection {
+        background: @backgroundColor;
+        color: @textColor;
+    }
+}
+
+// This is how you use it
+//.highlight(@yourColor, @white);
+//
+//
+//
+//I took this from the retina.js solution and modified it a bit. All credit goes to https://github.com/imulus/retinajs, I just tweaked this for my needs. This mixin includes most of the parameters you need, so you don't need to call them out twice. It can all be done in the mixin.
+//
+// the retina mixin. An example goes: .at2x(img/header@2x.png, 650px, 150px, top, left, no-repeat, scroll)
+// Put the size that the image appears on a non-retina, e.g. if it's a 200px x 200px non-retina, that is the effective size. The @2x 400px x 400px is calculated automatically. The order to type it is width then height.
+// A modification of the retina.js less mixin - https://github.com/imulus/retinajs
+@highdpi: ~"(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx)";
+.at2x(@path, @w: auto, @h: auto, @xpos: 0, @ypos: 0, @repeat: no-repeat, @attachment: scroll) {
+    background-image: url(@path);
+    background-position: @xpos @ypos;
+    background-repeat: @repeat;
+    background-attachment: @attachment;
+    @at2x_path: ~`"@{path}".split('.').slice(0, "@{path}".split('.').length - 1).join(".")+"@2x"+"."+"@{path}".split('.')["@{path}".split('.').length - 1]`;
+    @media @highdpi {
+        background-image: url(@at2x_path);
+        background-size: @w @h;
+        background-position: @xpos @ypos;
+        background-repeat: @repeat;
+        background-attachment: @attachment;
+    }
+}
+
+//super simple background-size: cover so CSS backgrounds will always be maximized, if your browser supports it.
+.background-cover(@cover: cover) {
+    -webkit-background-size: @cover;
+    -moz-background-size: @cover;
+    -o-background-size: @cover;
+    background-size: @cover;
+}
+
+//A Less mixin for layering 2 images in a background, and using "background-cover" so the bottom layer is always full size. Good for scrolling fixed backgrounds where you want a screen or other element on top. Here's a 2x2 pixel grid to get you started: http://www.helloerik.com/downloads/grid.png.zip See an example here: http://codepen.io/flowerpower/pen/Dxahd
+.background-layers(@top, @bottom) {
+    background: url(@top), url(@bottom);
+    background-position: top center, top center;
+    background-attachment: fixed, fixed;
+    background-repeat: repeat, repeat;
+    -webkit-background-size: auto, cover;
+    -moz-background-size: auto, cover;
+    -o-background-size: auto, cover;
+    background-size: auto, cover;
+}
+
+/////// Use it like this. don't forget the single quotes ///////
+//.background-layers('the-top-image.png', 'the-bottom-image.jpg');
