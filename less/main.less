@@ -5,7 +5,11 @@
     padding-right: 0;
 }
 
-//.highlight(@primaryDark, @primaryLight);
+section {
+    height: 100%;
+}
+
+.highlight(@variantDark, @variantight);
 @font-size-base: 15px;
 //**********************************************************************
 //Push menu toggle with Jasny Bootstrap
@@ -13,6 +17,7 @@
 html,
 body {
     height: 100%;
+    background-color: #000;
 }
 
 body {
@@ -84,20 +89,49 @@ body {
     }
 }
 
+//transparent background for navbar menu
+@media (min-width: 0) {
+    .navbar-default {
+        background-color: transparent;
+        border: none;
+    }
+}
+
+//moves closing X in menu to the left for very small screens
+@media (max-width: 380px) {
+    div.canvas-slid {
+        left: 220px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .bio {
+        background-color: black;
+    }
+}
+
 //**********************************************************************
 //**********************************************************************
 .about-me {
-    background-color: #eee;
     height: 100%;
     padding-top: 20px;
+    background-color: #030305;
+    .bio {
+        font-size: 32px;
+        color: @consoleUI;
+    }
+    .page-header {
+        position: relative;
+        color: @consoleUI;
+    }
 }
 
 .console {
-    overflow: auto;
+    overflow: hidden;
     resize: both;
     z-index: 1000;
     width: 100%;
-    height: 300px;
+    height: 350px;
     margin: 0 auto;
     position: relative;
     background-color: @consoleBG;
@@ -106,7 +140,7 @@ body {
     font-size: 11px;
     letter-spacing: 0;
     .border-radius(5px);
-    padding: 30px 5px 5px;
+    padding: 40px 5px 5px;
     border: 5px solid @consoleFrame;
     .console-symbol {
         color: @consoleSymbol;
@@ -125,7 +159,7 @@ body {
         .console-title {
             color: @consoleTitle;
             margin-left: 10px;
-            line-height: 1.6em;
+            line-height: 2.6em;
             font-size: 10px;
         }
         .ui-x {
@@ -133,30 +167,30 @@ body {
             text-align: center;
             display: inline-block;
             position: absolute;
-            width: 19px;
-            height: 19px;
+            width: 18px;
+            height: 18px;
             background-color: @consoleUI;
             color: @consoleFrame;
             right: 10px;
             top: 3px;
+            cursor: pointer;
             i {
-                padding-top: 2px;
+                top: 3.5px;
             }
         }
         .ui-up {
             .ui-x;
             right: 40px;
             i {
-                padding-top: 0;
-                padding-left: 1px;
+                top: 3px;
+                left: 0.5px;
             }
         }
         .ui-down {
             .ui-x;
             right: 70px;
             i {
-                padding-top: 3px;
-                padding-left: 1px;
+                left: 0.5px;
             }
         }
     }
@@ -206,7 +240,8 @@ body {
 }
 
 .img-bg,
-.img-stroke {
+.img-stroke,
+{
     width: 100%;
     height: 100%;
     position: fixed;
