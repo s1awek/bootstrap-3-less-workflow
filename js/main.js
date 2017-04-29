@@ -15,7 +15,10 @@ $(document).ready(function ($) {
     }, 3000);
 
 
-    //idea of determining scroll direction taken from:
+    $('.img-stroke').attr('src', 'img/abc_a.svg?' + Math.random()); //append random query string to animated SVG to prevent browser caching.
+    //Caching was cosing animation not playing.
+
+    //idea of determine scroll direction taken from:
     //http://stackoverflow.com/questions/4326845/how-can-i-determine-the-direction-of-a-jquery-scroll-event
     var lastScrollTop = 0,
         scrollSpeed = 2.0;
@@ -30,7 +33,6 @@ $(document).ready(function ($) {
         }
         lastScrollTop = st;
     });
-
     $('.ui-x').click(function () {
         $('.console').css('display', 'none');
     });
@@ -41,8 +43,6 @@ $(document).ready(function ($) {
             'overflow': 'hidden',
             'padding': '13px'
         });
-
-
     });
     $('.ui-up').click(function () {
         $('.console').css({
@@ -51,9 +51,5 @@ $(document).ready(function ($) {
             'overflow': 'auto',
             'padding': '40px 5px 5px'
         });
-
-
     });
-
-
 });
