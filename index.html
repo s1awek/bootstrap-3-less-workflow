@@ -14,118 +14,311 @@
       padding-bottom: 20px;
     }
   </style>
-  <link rel="stylesheet" href="css/jasny-bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="css/jasny-bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-  <nav class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
-    <a class="navmenu-brand" href="#">Slawek's Portfolio</a>
-    <ul class="nav navmenu-nav">
+  <button type="button" class="navbar-toggle collapsed">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar top-bar"></span>
+    <span class="icon-bar middle-bar"></span>
+    <span class="icon-bar bottom-bar"></span>
+  </button>
+  <nav class="sidenav menu-hidden" role="navigation">
+    <a class="navmenu-brand" href="#">Portfolio</a>
+    <ul class="navigation nav navbar-nav">
       <li><a href="#">AboutMe</a></li>
       <li class="active"><a href="#">MySkills</a></li>
       <li><a href="#">MyProjects </a></li>
       <li><a href="#">ContactMe</a></li>
     </ul>
   </nav>
-  <div class="navbar navbar-default navbar-fixed-top">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar top-bar"></span>
-                <span class="icon-bar middle-bar"></span>
-                <span class="icon-bar bottom-bar"></span>
-              </button>
-  </div>
-  <section>
-    <div class="container-fluid about-me">
-      <img src="img/abc.svg" class="img-bg" />
-      <!--
+
+
+
+  <div class="site-wrap">
+    <section>
+
+      <div class="container-fluid about-me">
+        <img src="img/abc.svg" class="img-bg" />
+        <img src="" class="img-stroke" />
+        <!--
             Animated SVG thanks to https://maxwellito.github.io/vivus/
             https://maxwellito.github.io/vivus-instant/
         -->
-      <img src="" class="img-stroke" />
-      <div class="container">
-        <div class="page-header">
-          <h1>ABOUT_ME</h1>
-        </div>
-        <div class="row">
-          <div class="col-md-4 console-wrapper">
-            <div class="console">
-              <div class="console-top-bar">
-                <span class="console-title">user@portfolio ~ bash</span>
-                <div class="ui-x"><i class="glyphicon glyphicon-remove"></i></div>
-                <div class="ui-up"><i class="glyphicon glyphicon-chevron-up"></i></div>
-                <div class="ui-down"><i class="glyphicon glyphicon-chevron-down"></i></div>
-              </div>
-              <span class="console-start">user@portfolio </span><span class="console-symbol">~ $ </span><span class="typed-text" id="typed" style="white-space:pre"></span></div>
+        <div class="container">
+          <div class="page-header">
+            <h1>ABOUT_ME</h1>
           </div>
-          <div class="col-md-8 bio">Hi, my name is Slawek Kasprzak and for about last decade I worked as a setter and programmer at CNC numerically controlled machines. However, my passion and hobby has always been programming and web development. For this reason, I decided to
-            finish FreeCodeCamp front end developer course and start career as a web developer. Better late than never ;)</div>
+          <div class="row">
+            <div class="col-md-4 console-wrapper">
+              <div class="console">
+                <div class="console-top-bar">
+                  <span class="console-title">user@portfolio ~ bash</span>
+                  <div class="ui-x"><i class="glyphicon glyphicon-remove"></i></div>
+                  <div class="ui-up"><i class="glyphicon glyphicon-chevron-up"></i></div>
+                  <div class="ui-down"><i class="glyphicon glyphicon-chevron-down"></i></div>
+                </div>
+                <span class="console-start">user@portfolio </span><span class="console-symbol">~ $ </span><span class="typed-text"
+                  id="typed" style="white-space:pre"></span>
+              </div>
+            </div>
+            <div class="col-md-8 bio-container">
+              <p class="bio">Hi, my name is Slawek Kasprzak and for about last decade I worked as a setter and programmer at CNC numerically
+                controlled machines. However, my passion and hobby has always been programming and web development. For this
+                reason, I decided to fnish FreeCodeCamp front end developer course and start career as a web developer. Better
+                late than never ;)</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- /.about-me -->
-  </section>
+      <!-- /.about-me -->
+    </section>
+    <div class="container-fluid cont-transition"><img src="img/transition.svg" alt="background" class="img-transition"></div>
+    <section>
+      <div class="container-fluid special">
+        <div id="projects-bg">
+          <div class="container">
+            <div class="page-header">
+              <h1>MY_PROJECTS</h1>
+            </div>
+            <div class="row row-projects" data-av-animation="slideInRight">
+              <div class="col-md-4 console-wrapper">
+                <div class="console console-dsc">
+                  <div class="console-top-bar">
+                    <span class="console-title">Twith.tv app</span>
+                    <div class="ui-x"><i class="glyphicon glyphicon-remove"></i></div>
+                    <div class="ui-up"><i class="glyphicon glyphicon-chevron-up"></i></div>
+                    <div class="ui-down"><i class="glyphicon glyphicon-chevron-down"></i></div>
+                  </div>
+                  <span class="dsc">Simple yet handsome app to check if streamer at https://twitch.tv/ is streaming at the moment. App user can see streamer status, filter results by offline/online status or by streamer name.</span>
+                </div>
+              </div>
+              <div class="col-md-8">
+<div class="img-wrapper">
+                  <img src="img/CodePen-Twitch.tvstreamchecker-FreeCodeCamp.jpg" alt="Twitch.tv App" class="img-responsive" />
+                  <div class="background-overlay"><a href="https://codepen.io/S1awek/pen/zKWGoG" class="website" target="_blank"></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="row row-projects" data-av-animation="slideInLeft">
+              <div class="col-md-4 col-md-push-8 console-wrapper">
+                <div class="console console-dsc">
+                  <div class="console-top-bar">
+                    <span class="console-title">Quote Machine</span>
+                    <div class="ui-x"><i class="glyphicon glyphicon-remove"></i></div>
+                    <div class="ui-up"><i class="glyphicon glyphicon-chevron-up"></i></div>
+                    <div class="ui-down"><i class="glyphicon glyphicon-chevron-down"></i></div>
+                  </div>
+                  <span class="dsc">In this project I used the API with citations of famous people. Clicking on the "New Quote" button will display a random quote along with information about its author. In addition, it is possible to publish an interesting quotation on your twitter - just click on the stylized letter "t".</span>
+                </div>
+              </div>
+              <div class="col-md-8 col-md-pull-4">
+<div class="img-wrapper">
+                  <img src="img/CodePen-SimpleQuoteMachine-FreeCodeCamp.jpg" alt="Quote Machine" class="img-responsive" />
+                  <div class="background-overlay"><a href="https://codepen.io/S1awek/pen/zKWGoG" class="website" target="_blank"></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="row row-projects" data-av-animation="slideInRight">
+              <div class="col-md-4 console-wrapper">
+                <div class="console console-dsc">
+                  <div class="console-top-bar">
+                    <span class="console-title">JavaScript Calculator</span>
+                    <div class="ui-x"><i class="glyphicon glyphicon-remove"></i></div>
+                    <div class="ui-up"><i class="glyphicon glyphicon-chevron-up"></i></div>
+                    <div class="ui-down"><i class="glyphicon glyphicon-chevron-down"></i></div>
+                  </div>
+                  <span class="dsc">This seemingly simple task made me spend more time on it than I had expected. I spent most of the time trying to solve Floating-Point error but finally I've made it. The application should be completely user-proof and it's able to deal with very long numbers, zero divide, etc.</span>
+                </div>
+              </div>
+              <div class="col-md-8">
+<div class="img-wrapper">
+                  <img src="img/CodePen-JavaScriptcalculator-FreeCodeCamp.jpg" alt="JavaScript Calculator" class="img-responsive" />
+                  <div class="background-overlay"><a href="https://codepen.io/S1awek/pen/bgmmzb" class="website" target="_blank"></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="row row-projects" data-av-animation="slideInLeft">
+              <div class="col-md-4 col-md-push-8 console-wrapper">
+                <div class="console console-dsc">
+                  <div class="console-top-bar">
+                    <span class="console-title">Pomodoro Clock</span>
+                    <div class="ui-x"><i class="glyphicon glyphicon-remove"></i></div>
+                    <div class="ui-up"><i class="glyphicon glyphicon-chevron-up"></i></div>
+                    <div class="ui-down"><i class="glyphicon glyphicon-chevron-down"></i></div>
+                  </div>
+                  <span class="dsc">An application based on the classic idea of "Pomodoro Clock". In this project for the first time I applied flexbox model and used SCSS preprocessor. Rules are simple: user can set up a pomodoro session in the range of 1 to 120 minutes. There is a break between each session, of which the default time is 5 minutes.</span>
+                </div>
+              </div>
+              <div class="col-md-8 col-md-pull-4">
+<div class="img-wrapper">
+                  <img src="img/CodePen-PomodoroClock-FreeCodeCamp.jpg" alt="Pomodoro Clock" class="img-responsive" />
+                  <div class="background-overlay"><a href="https://codepen.io/S1awek/pen/MpavGE" class="website" target="_blank"></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="row row-projects" data-av-animation="slideInRight">
+              <div class="col-md-4 console-wrapper">
+                <div class="console console-dsc">
+                  <div class="console-top-bar">
+                    <span class="console-title">Tic-Tac-Toe Game</span>
+                    <div class="ui-x"><i class="glyphicon glyphicon-remove"></i></div>
+                    <div class="ui-up"><i class="glyphicon glyphicon-chevron-up"></i></div>
+                    <div class="ui-down"><i class="glyphicon glyphicon-chevron-down"></i></div>
+                  </div>
+                  <span class="dsc">Classic Tic Tac Toe game. User can set 3 difficulty levels. At the last difficulty level it is not possible to win with AI.</span>
+                </div>
+              </div>
+              <div class="col-md-8">
+<div class="img-wrapper">
+                  <img src="img/CodePen-Tic-tac-toe-FreeCodeCamp.jpg" alt="Tic-Tac-Toe" class="img-responsive" />
+                  <div class="background-overlay"><a href="https://codepen.io/S1awek/pen/gmzQbB" class="website" target="_blank"></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="row row-projects" data-av-animation="slideInLeft">
+              <div class="col-md-4 col-md-push-8 console-wrapper">
+                <div class="console console-dsc">
+                  <div class="console-top-bar">
+                    <span class="console-title">Simon Game</span>
+                    <div class="ui-x"><i class="glyphicon glyphicon-remove"></i></div>
+                    <div class="ui-up"><i class="glyphicon glyphicon-chevron-up"></i></div>
+                    <div class="ui-down"><i class="glyphicon glyphicon-chevron-down"></i></div>
+                  </div>
+                  <span class="dsc">Here's my approach to the classic Simon Game. The rules are simple: turn the game on, press the "START" button and try to copy the combination by repeating the moves of the computer. To win, you have to repeat 20 moves without error.</span>
+                </div>
+              </div>
+              <div class="col-md-8 col-md-pull-4">
+                <div class="img-wrapper">
+                  <img src="img/CodePen-SimonGame-FreeCodeCamp.jpg" alt="Simon Game" class="img-responsive" />
+                  <div class="background-overlay"><a href="https://codepen.io/S1awek/pen/WjeMaE" class="website" target="_blank"></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="row row-projects" data-av-animation="slideInRight">
+              <div class="col-md-4 console-wrapper">
+                <div class="console console-dsc">
+                  <div class="console-top-bar">
+                    <span class="console-title">Weather App</span>
+                    <div class="ui-x"><i class="glyphicon glyphicon-remove"></i></div>
+                    <div class="ui-up"><i class="glyphicon glyphicon-chevron-up"></i></div>
+                    <div class="ui-down"><i class="glyphicon glyphicon-chevron-down"></i></div>
+                  </div>
+                  <span class="dsc">This app will display weather information based on the location of the user's IP address. In addition, it is possible to change units from degrees Celsius to fahrenheit degrees and vice versa. The application will also display a apropriate weather icon and a background image coresponding with weather condition.</span>
+                </div>
+              </div>
+              <div class="col-md-8">
+<div class="img-wrapper">
+                  <img src="img/CodePen-Weatherapp-FreeCodeCamp.jpg" alt="Weather App" class="img-responsive" />
+                  <div class="background-overlay"><a href="https://codepen.io/S1awek/pen/VKBrEZ" class="website" target="_blank"></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="row row-projects" data-av-animation="slideInLeft">
+              <div class="col-md-4 col-md-push-8 console-wrapper">
+                <div class="console console-dsc">
+                  <div class="console-top-bar">
+                    <span class="console-title">Wiki Viewer</span>
+                    <div class="ui-x"><i class="glyphicon glyphicon-remove"></i></div>
+                    <div class="ui-up"><i class="glyphicon glyphicon-chevron-up"></i></div>
+                    <div class="ui-down"><i class="glyphicon glyphicon-chevron-down"></i></div>
+                  </div>
+                  <span class="dsc">The application uses the Wikipedia API. It allows you to find the article you are interested in and gives you suggestions about topics related to it. Related articles appear as a list, along with a thumbnail if available.</span>
+                </div>
+              </div>
+              <div class="col-md-8 col-md-pull-4">
+                <div class="img-wrapper">
+                  <img src="img/CodePen-Wikiviewer-FreeCodeCamp.jpg" alt="Wiki Viewer" class="img-responsive" />
+                  <div class="background-overlay"><a href="https://codepen.io/S1awek/pen/yaGxyq" class="website" target="_blank"></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="row row-projects" data-av-animation="slideInRight">
+              <div class="col-md-4 console-wrapper">
+                <div class="console console-dsc">
+                  <div class="console-top-bar">
+                    <span class="console-title">arcadius-atelier.com</span>
+                    <div class="ui-x"><i class="glyphicon glyphicon-remove"></i></div>
+                    <div class="ui-up"><i class="glyphicon glyphicon-chevron-up"></i></div>
+                    <div class="ui-down"><i class="glyphicon glyphicon-chevron-down"></i></div>
+                  </div>
+                  <span class="dsc">This is a company website and online store. Created and maintained by me, including photos and texts. It is based on WordPress CMS, DIVI template and Woocommerce plugin. It has 2 language versions.</span>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="img-wrapper">
+                  <img src="img/arcadius-atelier.com_s1awek_portfolio.png" alt="Arcadius Atelier screenshot" class="img-responsive" />
+                  <div class="background-overlay"><a href="https://arcadius-atelier.com" class="website" target="_blank"></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="row row-projects" data-av-animation="slideInLeft">
+              <div class="col-md-4 col-md-push-8 console-wrapper">
+                <div class="console console-dsc">
+                  <div class="console-top-bar">
+                    <span class="console-title">sumermotard.pl</span>
+                    <div class="ui-x"><i class="glyphicon glyphicon-remove"></i></div>
+                    <div class="ui-up"><i class="glyphicon glyphicon-chevron-up"></i></div>
+                    <div class="ui-down"><i class="glyphicon glyphicon-chevron-down"></i></div>
+                  </div>
+                  <span class="dsc">Simple but good looking hobby blog site, with basic functionality, installed on WordPress CMS and based on the heavily modified Obox template.</span>
+                </div>
+              </div>
+              <div class="col-md-8 col-md-pull-4">
+                <div class="img-wrapper">
+                  <img src="img/supermotard.pl_s1awek_portfolio.png" alt="supermotard.pl screenshot" class="img-responsive" />
+                  <div class="background-overlay"><a href="http://supermotard.pl" class="website" target="_blank"></a></div>
+                </div>
+              </div>
 
-  <section>
-    <div class="container-fluid pojects">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo dolor deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem
-            ipsum dolor sit amet, consectetur adipisicing elit. Quo dolor deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit. Quo dolor deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor
-            sit amet, consectetur adipisicing elit. Quo dolor deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit
-            amet, consectetur adipisicing elit. Quo dolor deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit. Quo dolor deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Quo dolor deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit. Quo dolor deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Quo dolor deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
-            dolor deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo dolor
-            deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo dolor deserunt,
-            corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo dolor deserunt, corporis
-            ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo dolor deserunt, corporis ducimus
-            minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo dolor deserunt, corporis ducimus minima,
-            voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo dolor deserunt, corporis ducimus minima, voluptatum
-            numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo dolor deserunt, corporis ducimus minima, voluptatum numquam
-            quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.</div>
-          <div class="col-lg-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo dolor deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem
-            ipsum dolor sit amet, consectetur adipisicing elit. Quo dolor deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit. Quo dolor deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor
-            sit amet, consectetur adipisicing elit. Quo dolor deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit
-            amet, consectetur adipisicing elit. Quo dolor deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit. Quo dolor deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Quo dolor deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit. Quo dolor deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Quo dolor deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
-            dolor deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo dolor
-            deserunt, corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo dolor deserunt,
-            corporis ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo dolor deserunt, corporis
-            ducimus minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo dolor deserunt, corporis ducimus
-            minima, voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo dolor deserunt, corporis ducimus minima,
-            voluptatum numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo dolor deserunt, corporis ducimus minima, voluptatum
-            numquam quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo dolor deserunt, corporis ducimus minima, voluptatum numquam
-            quibusdam recusandae ratione. Sequi provident sit reiciendis accusantium quam rem architecto at tempore laboriosam.</div>
+            </div>
+            <div class="row row-projects" data-av-animation="slideInRight">
+              <div class="col-md-4 console-wrapper">
+                <div class="console console-dsc">
+                  <div class="console-top-bar">
+                    <span class="console-title">e-animalium.pl</span>
+                    <div class="ui-x"><i class="glyphicon glyphicon-remove"></i></div>
+                    <div class="ui-up"><i class="glyphicon glyphicon-chevron-up"></i></div>
+                    <div class="ui-down"><i class="glyphicon glyphicon-chevron-down"></i></div>
+                  </div>
+                  <span class="dsc">Completely functional social network for animal lovers, similar functionality to Facebook. Very heavily modified, based on CMC Wordpress, Thrive template and BuddyPress plugin. It includes chat, the ability to add ads, private messages and more.</span>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="img-wrapper">
+                  <img src="img/e-animalium.pl_s1awek_portfolio.png" alt="e-animalium.pl screenshot" class="img-responsive" />
+                  <div class="background-overlay"><a href="https://e-animalium.pl" class="website" target="_blank"></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-    </div>
-  </section>
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    </section>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
   <script>
     /*jslint browser:true */
-    window.jQuery || document.write('<script src="js/vendor/jquery-2.2.4.min.js"><\/script>');
+    window.jQuery || document.write('<script src="js/vendor/jquery-2.2.4.min.js "><\/script>');
   </script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyloadxt/1.1.0/jquery.lazyloadxt.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyloadxt/1.1.0/jquery.lazyloadxt.widget.js"></script>
   <script src="js/vendor/bootstrap.min.js"></script>
-  <script src="js/jasny-bootstrap.min.js"></script>
-  <script src="js/typed.js"></script>
+  <!-- <script src="js/jasny-bootstrap.min.js"></script> -->
+  <script src="js/typed.js "></script>
+  <script src="https://unpkg.com/jquery-aniview/dist/jquery.aniview.js"></script>
+  <!-- <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script> -->
   <!-- typed.js below -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       Typed.new('.typed-text', {
-        strings: [
-          "jsconsole --s\nvar aboutMe = {\n  name: 'Slawek Kasprzak',\n  selfManaged: true,\n  commited: true,\n  reliable: true,\n  hardWorking: true,\n  passionate: true\n\};\n\nvar mySkills = ['JavaScript', 'HTML',\n'CSS', 'jQuery', 'Bootstrap',\n'Photoshop', 'WordPress', 'Linux',\n'GIT', 'MoreToCome'];\n\nexit\n\n<span class='console-start'>user@portfolio </span><span class='console-symbol'>~ $ </span>"
-        ],
+        strings: ["jsconsole -s\nvar aboutMe = {\n name: 'Slawek Kasprzak',\n selfManaged: true,\n commited: true,\n reliable: true,\n hardWorking: true,\n passionate: true\n\};\n\nvar mySkills = ['JavaScript', 'HTML',\n 'CSS', 'jQuery', 'Bootstrap',\n 'Photoshop', 'WordPress', 'Linux', 'SCSS'\n 'LESS', 'GIT', 'MoreToCome'];\n\nexit\n\n<span class='console-start'>user@portfolio </span><span class='console-symbol'>~ $ </span>"],
         contentType: 'html',
         showCursor: true,
         cursorChar: "|",

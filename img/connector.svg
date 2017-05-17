@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:cc="http://creativecommons.org/ns#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+  id="svg2"
+  version="1.1"
+  inkscape:version="0.91 r13725"
+  sodipodi:docname="connector.svg">
+
+  <defs id="defs24"/>
+
+  <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+  <g id="g4" transform="translate(-10.014891,-80.779975)">
+    <title id="title6">background
+    </title>
+    <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid" style="display:none;overflow:visible">
+      <rect y="0" x="0" height="400" width="580" id="rect10" style="fill:url(#gridpattern);stroke-width:20"/>
+    </g>
+  </g>
+  <g id="g12" transform="translate(-10.014891,-80.779975)">
+    <title id="title14">Layer 1</title>
+  </g>
+  <path
+    id="svg_1-6"
+    style="fill:none;stroke:#555555;stroke-width:14"
+    d="m 287.38048,125.99301 216.51782,0 m 31.6127,0.007 a 16.000012,16.000001 0 0 1 -16.00002,16 16.000012,16.000001 0 0 1 -16.00001,-16 16.000012,16.000001 0 0 1 16.00001,-16 16.000012,16.000001 0 0 1 16.00002,16 z m -15.87087,15.70551 0,113.33048 M 39.000027,126.00002 a 16.000012,16.000001 0 0 1 -16.000014,16 16.000012,16.000001 0 0 1 -16.0000126,-16 16.000012,16.000001 0 0 1 16.0000126,-16 16.000012,16.000001 0 0 1 16.000014,16 z M 23.010563,-4.5166015e-6 23.010563,109.56991 m 264.500217,16.43011 a 16.000012,16.000001 0 0 1 -16,16 16.000012,16.000001 0 0 1 -16.00002,-16 16.000012,16.000001 0 0 1 16.00002,-16 16.000012,16.000001 0 0 1 16,16 z m -248.340393,0 216.520483,0"
+    inkscape:connector-curvature="0"/>
+</svg>

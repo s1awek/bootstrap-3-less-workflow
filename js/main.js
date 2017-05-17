@@ -4,9 +4,9 @@
 $(document).ready(function($) {
   'use strict';
   // Toggle .collapsed class for animation of burger icon
-  $('.navbar-toggle').on('click', function() {
-    $(this).toggleClass('collapsed');
-  });
+  // $('.navbar-toggle').on('click', function() {
+  //   $(this).toggleClass('collapsed');
+  // });
 
   // Control SVG animoation at ABOUT_ME section
   setTimeout(function() {
@@ -23,6 +23,7 @@ $(document).ready(function($) {
   $(window).scroll(function(event) {
     var st = $(this).scrollTop();
     if (st > lastScrollTop) { // if scroll down
+      $('#projects-bg').addClass('projects');
       $('.img-bg').css('top', '-' + Math.floor($(window).scrollTop() * scrollSpeed) + 'px');
       $('.img-stroke').css('top', '-' + Math.floor($(window).scrollTop() * scrollSpeed) + 'px');
     } else { // if scroll up
@@ -31,7 +32,7 @@ $(document).ready(function($) {
     }
     lastScrollTop = st;
   });
-
+  // oppening and closing fake console on ABOUT_ME page
   $('.ui-x').click(function() {
     $('.console').css('display', 'none');
   });
@@ -50,5 +51,47 @@ $(document).ready(function($) {
       'overflow': 'auto',
       'padding': '40px 5px 5px'
     });
+  });
+
+  $('.bio').textillate({
+    loop: false,
+    initialDelay: 0,
+    autoStart: true,
+    in: {
+      effect: 'fadeInLeftBig',
+      delayScale: 1.5,
+      delay: 1,
+      sync: false,
+      shuffle: true,
+      reverse: false
+    },
+    type: 'char'
+  });
+
+  $('.row-projects').AniView();
+
+  $('.navbar-toggle').on('click', function() {
+    if ($('.sidenav').hasClass('menu-hidden')) {
+      $('.sidenav').toggleClass('menu-show menu-hidden');
+      $('.navbar-toggle').toggleClass('collapsed');
+      $('.sidenav').css({
+        'transition': 'width 1s ease',
+        'width': '250px'
+      });
+      $('.site-wrap').css({
+        'transition': 'left 1s ease',
+        'left': '250px'
+      });
+      $('.navbar-toggle').css({
+        'transition': 'left 1s ease',
+        'left': '180px'
+      });
+    } else {
+      $('.sidenav').toggleClass('menu-show menu-hidden');
+      $('.navbar-toggle').toggleClass('collapsed');
+      $('.sidenav').css('width', '0px');
+      $('.site-wrap').css('left', '0px');
+      $('.navbar-toggle').css('left', '15px');
+    }
   });
 });

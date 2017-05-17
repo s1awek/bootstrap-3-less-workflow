@@ -1,26 +1,27 @@
 // main: styles.less
 //Remove padding for nested containers
 .container-fluid .container {
-    padding-left: 0;
     padding-right: 0;
+    padding-left: 0;
 }
 
 .highlight(@variantDark, @variantLight);
 @font-size-base: 15px;
-//**********************************************************************
-//Push menu toggle with Jasny Bootstrap
-//**********************************************************************
-html,
-body {
+body,
+html {
     height: 100%;
     background-color: #141926;
 }
 
 body {
-    padding: 50px 0 0 0;
+    overflow-x: hidden;
+    padding: 50px 0 0;
 }
 
 .navbar-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
     float: left;
     margin-left: 15px;
 }
@@ -36,14 +37,93 @@ body {
     body {
         padding: 0;
     }
-    .navbar {
-        right: auto;
-        background: none;
-        border: none;
+}
+
+
+/* The side navigation menu */
+
+.sidenav {
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 10;
+    /* Stay on top */
+    top: 0;
+    left: 0;
+    /* Black*/
+    overflow-x: hidden;
+    /* 100% Full-height */
+    width: 0;
+    height: 100%;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    background-color: #111;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
+
+
+/* The navigation menu links */
+
+.sidenav a {
+    display: block;
+    padding: 8px 8px 8px 32px;
+    transition: 0.3s;
+    text-decoration: none;
+    color: #818181;
+    font-size: 25px;
+    width: 100%; //text-align: center;
+    &:hover {
+        color: @darkText !important;
     }
-    //        .about-me {
-    //        padding-top: 0;
-    //    }
+}
+
+
+/* When you mouse over the navigation links, change their color */
+
+.offcanvas a:focus,
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav ul {
+    list-style: none;
+}
+
+.sidenav ul li {
+    width: 100%;
+}
+
+
+/* Position and style the close button (top right corner) */
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    margin-left: 50px;
+    font-size: 36px;
+}
+
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+
+#main {
+    padding: 20px;
+    transition: margin-left 0.5s;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
 }
 
 //**********************************************************************
@@ -51,6 +131,10 @@ body {
 //https://julienmelissas.com/animated-x-icon-for-the-bootstrap-navbar-toggle/
 //**********************************************************************
 .navbar-toggle {
+    z-index: 15;
+    overflow: hidden;
+    width: 42px;
+    padding-left: 7px;
     border: none;
     background: transparent !important;
     &:hover {
@@ -60,6 +144,7 @@ body {
         width: 42px;
         height: 7px;
         transition: all 1s;
+        background: @lightText;
     }
     .top-bar {
         transform: rotate(45deg);
@@ -88,54 +173,68 @@ body {
 //transparent background for navbar menu
 @media (min-width: 0) {
     .navbar-default {
-        background-color: transparent;
         border: none;
+        background-color: transparent;
     }
 }
 
-//moves closing X in menu to the left for very small screens
-@media (max-width: 380px) {
-    div.canvas-slid {
-        left: 220px !important;
+.site-wrap {
+    position: relative;
+    top: 0;
+    right: auto;
+    left: 0;
+}
+
+.collapsed {
+    padding-left: 0;
+}
+
+@media screen and (max-width: 992px) {
+    .site-wrap {
+        margin-top: -50px;
+    }
+    .navbar-toggle {
+        top: 5px;
+        left: 5px;
     }
 }
 
-//@media (max-width: 992px) {
-//    .bio {
-//        background-color: black;
-//    }
-//}
-//**********************************************************************
-//**********************************************************************
 .about-me {
     min-height: 100vh;
     padding-top: 20px;
+    background-color: #030305;
     .bio {
+        color: @lightText;
         font-size: 2.14em;
-        color: @consoleUI;
-    }
-    .page-header {
-        position: relative;
-        color: @consoleUI;
     }
 }
 
+.page-header {
+    position: relative;
+    color: @consoleUI;
+}
+
+.bio-container {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .console {
+    position: relative;
+    z-index: 10;
     overflow: hidden;
-    resize: both;
-    z-index: 1000;
     width: 100%;
     height: 350px;
     margin: 0 auto;
-    position: relative;
-    background-color: @consoleBG;
+    padding: 40px 5px 5px;
+    resize: both;
+    letter-spacing: 0;
     color: @consoleText;
+    border: 5px solid @consoleFrame;
+    background-color: @consoleBG;
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 0.77em;
-    letter-spacing: 0;
     .border-radius(5px);
-    padding: 40px 5px 5px;
-    border: 5px solid @consoleFrame;
     .console-symbol {
         color: @consoleSymbol;
         font-weight: bold;
@@ -151,23 +250,23 @@ body {
         height: 30px;
         background-color: @consoleFrame;
         .console-title {
-            color: @consoleTitle;
             margin-left: 10px;
-            line-height: 2.6em;
+            color: @consoleTitle;
             font-size: 1em;
+            line-height: 2.6em;
         }
         .ui-x {
-            .border-radius(50%);
-            text-align: center;
-            display: inline-block;
             position: absolute;
+            top: 3px;
+            right: 10px;
+            display: inline-block;
             width: 18px;
             height: 18px;
-            background-color: @consoleUI;
-            color: @consoleFrame;
-            right: 10px;
-            top: 3px;
             cursor: pointer;
+            text-align: center;
+            color: @consoleFrame;
+            background-color: @consoleUI;
+            .border-radius(50%);
             i {
                 top: 3.5px;
             }
@@ -187,13 +286,12 @@ body {
                 left: 0.5px;
             }
         }
-    }
-    //cursor for console
+    } //cursor for console
     .typed-cursor {
-        opacity: 1;
         -webkit-animation: blink 0.7s infinite;
         -moz-animation: blink 0.7s infinite;
         animation: blink 0.7s infinite;
+        opacity: 1;
     }
     @keyframes blink {
         0% {
@@ -236,18 +334,129 @@ body {
 }
 
 .img-bg,
-.img-stroke,
-{
-    width: 100%;
-    height: 100%;
+.img-stroke {
     position: fixed;
     top: 0;
-    left: 0;
-    bottom: 0;
     right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 //projects
-.projescts {
-    background-color: #030305;
+.projects {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    -webkit-animation: bg-pan-bottom 10s both;
+    -moz-animation: bg-pan-bottom 10s both;
+    animation: bg-pan-bottom 10s both;
+    background-image: -webkit-linear-gradient(bottom, #cc6aa5, #3e91cc, #2dcca7);
+    background-image: linear-gradient(0deg, #030305, #33335b, #17141F);
+    background-size: 100% 600%;
+}
+
+
+/* ----------------------------------------------
+* Generated by Animista on 2017-5-11 14:9:28
+* http://animista.net
+* T: @cssanimista
+* ---------------------------------------------- */
+
+@-webkit-keyframes bg-pan-bottom {
+    0% {
+        background-position: 50% 0;
+    }
+    100% {
+        background-position: 50% 100%;
+    }
+}
+
+@keyframes bg-pan-bottom {
+    0% {
+        background-position: 50% 0;
+    }
+    100% {
+        background-position: 50% 100%;
+    }
+}
+
+.special {
+    padding: 0;
+}
+
+.description {
+    color: @lightText;
+    font-size: 2em;
+}
+
+.cont-transition {
+    position: relative;
+    padding: 0;
+}
+
+.img-transition {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+.dsc {
+    display: table;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    font-size: 1.5em;
+}
+
+.console-dsc {
+    border-spacing: 10px;
+}
+
+.row-projects {
+    margin: 60px 0;
+}
+
+.img-wrapper {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.img-wrapper img {
+    max-width: 100%;
+    -webkit-transition: all 1.4s;
+    -moz-transition: all 1.4s;
+    transition: all 1.4s;
+}
+
+.img-wrapper:hover img {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.img-wrapper:hover .background-overlay {
+    opacity: 0.8;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse farthest-corner at center center, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0.85) 100%) repeat scroll 0% 0%;
+    transition: 0.5s;
+    a {
+        display: block;
+        height: 100%;
+    }
 }
