@@ -119,11 +119,17 @@ body {
 
 @media screen and (max-height: 450px) {
     .sidenav {
-        padding-top: 15px;
+        padding: 15px 0 0 0;
     }
     .sidenav a {
         font-size: 18px;
     }
+}
+
+@media screen and (max-width: 767px){
+  .sidenav ul {
+    padding-left: 15px;
+  }
 }
 
 //**********************************************************************
@@ -219,12 +225,16 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.console-top{
+  min-height: 350px;
+}
+
 .console {
     position: relative;
     z-index: 10;
     overflow: hidden;
     width: 100%;
-    height: 350px;
+    height: 340px;
     margin: 0 auto;
     padding: 40px 5px 5px;
     resize: both;
@@ -235,6 +245,9 @@ body {
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 0.77em;
     .border-radius(5px);
+    .dsc{
+      font-size: 1.5rem;
+    }
     .console-symbol {
         color: @consoleSymbol;
         font-weight: bold;
@@ -504,4 +517,29 @@ a.website {
 .pen-wrap {
     display: inline-block;
     padding-left: 5px;
+}
+
+@media screen and (max-width: 1200px) {
+  .row-projects .console {
+        height: 280px;
+
+  }
+   .console .dsc{
+     font-size: 1.3rem;
+   }
+}
+
+@media screen and (max-width: 450px) {
+  .console .dsc{
+    font-size: 1.1rem;
+  }
+}
+.arrow {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .arrow {
+    display: block;
+    margin:0 auto;
+  }
 }

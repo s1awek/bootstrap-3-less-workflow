@@ -32,7 +32,7 @@ $(document).ready(function($) {
     }
     lastScrollTop = st;
   });
-  // oppening and closing fake console on ABOUT_ME page
+  // oppening and closing fake console
   $('.ui-x').click(function() {
     $('.console').css('display', 'none');
   });
@@ -46,7 +46,7 @@ $(document).ready(function($) {
   });
   $('.ui-down').click(function() {
     $('.console').css({
-      'height': '350px',
+      'height': '340px',
       'resize': 'both',
       'overflow': 'auto',
       'padding': '40px 5px 5px'
@@ -68,7 +68,7 @@ $(document).ready(function($) {
     type: 'char'
   });
 
-  $('.row-projects').AniView();
+  $('.console-wrapper, .img-wrapper').AniView();
 
   $('.navbar-toggle').on('click', function() {
     if ($('.sidenav').hasClass('menu-hidden')) {
