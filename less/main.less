@@ -365,8 +365,9 @@ body {
     -webkit-animation: bg-pan-bottom 10s both;
     -moz-animation: bg-pan-bottom 10s both;
     animation: bg-pan-bottom 10s both;
-    background-image: -webkit-linear-gradient(bottom, #cc6aa5, #3e91cc, #2dcca7);
-    background-image: linear-gradient(0deg, #030305, #33335b, #17141F);
+    background-image: -webkit-linear-gradient(bottom, #4e4eff, #dd1f58, #bdb618);
+    background-image: linear-gradient(100deg, #4e4eff, #dd1f58, #bdb618);
+
     background-size: 100% 600%;
 }
 
@@ -407,16 +408,21 @@ body {
 .cont-transition {
     position: relative;
     padding: 0;
+    margin-top: -2px;
 }
 
 .img-transition {
     position: absolute;
-    top: 0;
+    top: -2px;
     right: 0;
     bottom: 0;
-    left: 0;
-    width: 100%;
+    left: -5px;
+    width: 101%;
     height: auto;
+}
+
+.img-transition-bottom {
+  width: 101%;
 }
 
 .dsc {
@@ -517,6 +523,7 @@ a.website {
 .pen-wrap {
     display: inline-block;
     padding-left: 5px;
+    margin-top: 15px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -542,4 +549,14 @@ a.website {
     display: block;
     margin:0 auto;
   }
+}
+.website-site {
+  display: flex !important;
+  align-items: center;
+  justify-content: center
+}
+
+.row-canvas canvas {
+  width: 100%;
+  height: auto;
 }

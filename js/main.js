@@ -94,4 +94,22 @@ $(document).ready(function($) {
       $('.navbar-toggle').css('left', '15px');
     }
   });
+
+  if (!$('#myCanvas').tagcanvas({
+      textColour: '#fff',
+      outlineColour: 'transparent',
+      reverse: true,
+      depth: 0.3,
+      maxSpeed: 0.1,
+      initial: [0.030, 0.150],
+      imageScale: 0.8,
+      activeCursor: 'default',
+      noSelect: true,
+      wheelZoom: false
+
+    }, 'tags')) {
+    // something went wrong, hide the canvas container
+    $('#myCanvasContainer').hide();
+  }
+
 });
