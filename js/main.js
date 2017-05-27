@@ -14,7 +14,7 @@ $(document).ready(function($) {
     $('.img-stroke').fadeOut(3000);
   }, 3000);
 
-  $('.img-stroke').attr('src', 'img/abc_a.svg?' + Math.random()); // append random query string to animated SVG to prevent browser caching and skipping animation.
+  $('.img-stroke').attr('src', 'img/abc_gwiazdy.svg?' + Math.random()); // append random query string to animated SVG to prevent browser caching and skipping animation.
 
   // idea of determine scroll direction taken from:
   // http://stackoverflow.com/questions/4326845/how-can-i-determine-the-direction-of-a-jquery-scroll-event
@@ -26,9 +26,11 @@ $(document).ready(function($) {
       $('#projects-bg').addClass('projects');
       $('.img-bg').css('top', '-' + Math.floor($(window).scrollTop() * scrollSpeed) + 'px');
       $('.img-stroke').css('top', '-' + Math.floor($(window).scrollTop() * scrollSpeed) + 'px');
+      $('.sun').css('top', '+' + Math.floor($(window).scrollTop() * 0.04) + 'px');
     } else { // if scroll up
       $('.img-bg').css('top', '-' + Math.floor($(window).scrollTop() * scrollSpeed) + 'px');
       $('.img-stroke').css('top', '-' + Math.floor($(window).scrollTop() * scrollSpeed) + 'px');
+      $('.sun').css('top', '+' + Math.floor($(window).scrollTop() * 0.04) + 'px');
     }
     lastScrollTop = st;
   });
@@ -55,22 +57,24 @@ $(document).ready(function($) {
 
   $('.bio').textillate({
     loop: false,
-    initialDelay: 0,
+    initialDelay: 2500,
     autoStart: true,
     in: {
-      effect: 'fadeInLeftBig',
+      effect: 'fadeInRightBig',
       delayScale: 1.5,
-      delay: 1,
+      delay: 5,
       sync: false,
-      shuffle: true,
+      shuffle: false,
       reverse: false
     },
     type: 'char'
   });
 
-  $('.console-wrapper, .img-wrapper').AniView();
+  $('.console-wrapper, .img-wrapper', '.sun').AniView();
 
   $('.navbar-toggle').on('click', function() {
+    var sunPositionMove = ($('.sun').position().left + 250) + 'px';
+    var sunPositionBack = ($('.sun').position().left - 250) + 'px';
     if ($('.sidenav').hasClass('menu-hidden')) {
       $('.sidenav').toggleClass('menu-show menu-hidden');
       $('.navbar-toggle').toggleClass('collapsed');
@@ -86,12 +90,20 @@ $(document).ready(function($) {
         'transition': 'left 1s ease',
         'left': '180px'
       });
+      $('.sun').css({
+        'transition': 'left 1s ease',
+        'left': sunPositionMove
+      });
     } else {
       $('.sidenav').toggleClass('menu-show menu-hidden');
       $('.navbar-toggle').toggleClass('collapsed');
       $('.sidenav').css('width', '0px');
       $('.site-wrap').css('left', '0px');
       $('.navbar-toggle').css('left', '15px');
+      $('.sun').css({
+        'transition': 'left 1s ease',
+        'left': sunPositionBack
+      });
     }
   });
 
@@ -111,5 +123,28 @@ $(document).ready(function($) {
     // something went wrong, hide the canvas container
     $('#myCanvasContainer').hide();
   }
+  $('.cloud1-trigger').waypoint(function(direction) {
+    console.log(direction);
+    if (direction === 'down') {
+      $('.cloud1').addClass('cloud1-vissible');
+    } else {
+      $('.cloud1').removeClass('cloud1-vissible');
+    }
+  });
 
+  $('.cloud2-trigger').waypoint(function(direction) {
+    if (direction === 'down') {
+      $('.cloud2').addClass('cloud2-vissible');
+    } else {
+      $('.cloud2').removeClass('cloud2-vissible');
+    }
+  });
+
+  $('.cloud3-trigger').waypoint(function(direction) {
+    if (direction === 'down') {
+      $('.cloud3').addClass('cloud3-vissible');
+    } else {
+      $('.cloud3').removeClass('cloud3-vissible');
+    }
+  });
 });

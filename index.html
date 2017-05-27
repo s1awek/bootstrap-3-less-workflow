@@ -8,6 +8,7 @@
   <title>Slawek's Portfolio</title>
   <meta name="description" content="">
   <link href="https://fonts.googleapis.com/css?family=Lato&amp;subset=latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&amp;subset=latin-ext" rel="stylesheet">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <style>
@@ -63,7 +64,8 @@
               </div>
             </div>
             <div class="col-md-8 bio-container">
-              <p class="bio">Hi, my name is Slawek Kasprzak and for about last decade I worked as a setter and programmer at CNC numerically controlled machines. However, my passion and hobby has always been programming and web development. For this reason, I decided to fnish FreeCodeCamp front end developer course and start career as a web developer. Better late than never ;)</p>
+              <p class="bio">Hi, my name is Slawek and for about last decade I worked as a setter and programmer at CNC numerically controlled machines. However, my passion and hobby has always been programming and web development. For this reason, I decided to fnish FreeCodeCamp front end developer course and start career as a web developer. Better late than never ;)</p>
+              <p class="bio">Scroll down to see may latest projects.</p>
             </div>
           </div>
         </div>
@@ -73,9 +75,13 @@
     <div class="container-fluid cont-transition"><img src="img/transition.svg" alt="background" class="img-transition"></div>
     <section>
       <div class="container-fluid special">
+        <img src="img/sun.svg" alt="sun" class="sun">
+        <img src="img/cloud1.svg" alt="cloud1" class="cloud1">
+        <img src="img/cloud2.svg" alt="cloud2" class="cloud2">
+        <img src="img/cloud3.svg" alt="cloud3" class="cloud3">
         <div id="projects-bg">
           <div class="container">
-            <div class="page-header">
+            <div class="page-header projects-header">
               <h1>MY_PROJECTS</h1>
             </div>
             <div class="row row-projects">
@@ -91,24 +97,28 @@
                 </div>
                 <img src="img/arrow.svg" alt="arrow" class="arrow">
               </div>
+
               <div class="col-md-8">
                 <div class="img-wrapper" data-av-animation="slideInLeft">
                   <img src="img/CodePen-Twitch.tvstreamchecker-FreeCodeCamp.jpg" alt="Twitch.tv App" class="img-responsive" />
                   <div class="background-overlay">
                     <a href="https://codepen.io/S1awek/pen/rWxgBQ" class="website" target="_blank">
+
                       <div class="pen-wrap">
+
                         <img src="img/codepen-logo.svg" alt="Codepen Logo" width="45" height="45">
                         <h1 class="pen-title">Twitch.tv stream checker - FreeCodeCamp
                         </h1>
                         <div class="by">A Pen By <span class="pen-name">S1awek</span>
                         </div>
                       </div>
+
                     </a>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="row row-projects">
+            <div class="row row-projects cloud1-trigger">
               <div class="col-md-4 col-md-push-8 console-wrapper" data-av-animation="slideInLeft">
                 <div class="console console-dsc">
                   <div class="console-top-bar">
@@ -125,13 +135,13 @@
                 <div class="img-wrapper" data-av-animation="slideInRight">
                   <img src="img/CodePen-SimpleQuoteMachine-FreeCodeCamp.jpg" alt="Quote Machine" class="img-responsive" />
                   <div class="background-overlay">
-                    <div class="pen-wrap">
-                      <a href="https://codepen.io/S1awek/pen/zKWGoG" class="website" target="_blank">
+                    <a href="https://codepen.io/S1awek/pen/zKWGoG" class="website" target="_blank">
+                      <div class="pen-wrap">
                         <img src="img/codepen-logo.svg" alt="Codepen Logo" width="45" height="45" />
                         <h1 class="pen-title">Simple Quote Machine - FreeCodeCamp</h1>
                         <div class="by">A Pen By <span class="pen-name">S1awek</span>
                         </div>
-                    </div>
+                      </div>
                     </a>
                   </div>
                 </div>
@@ -150,7 +160,7 @@
                 </div>
                 <img src="img/arrow.svg" alt="arrow" class="arrow">
               </div>
-              <div class="col-md-8">
+              <div class="col-md-8 cloud2-trigger">
                 <div class="img-wrapper" data-av-animation="slideInLeft">
                   <img src="img/CodePen-JavaScriptcalculator-FreeCodeCamp.jpg" alt="JavaScript Calculator" class="img-responsive" />
                   <div class="background-overlay">
@@ -282,7 +292,7 @@
                 </div>
               </div>
             </div>
-            <div class="row row-projects">
+            <div class="row row-projects cloud3-trigger">
               <div class="col-md-4 col-md-push-8 console-wrapper" data-av-animation="slideInLeft">
                 <div class="console console-dsc">
                   <div class="console-top-bar">
@@ -312,6 +322,7 @@
               </div>
             </div>
             <div class="row row-projects">
+
               <div class="col-md-4 console-wrapper" data-av-animation="slideInRight">
                 <div class="console console-dsc">
                   <div class="console-top-bar">
@@ -395,12 +406,17 @@
     </section>
     <section>
 
-      <div class="container">
-        <div class="page-header">
-          <h1>MY_SKILLS</h1>
-        </div>
+      <div class="container my-skills-container">
+
         <div class="row row-canvas">
-          <div class="col-xs-8">
+
+          <div class="col-md-6">
+            <div class="page-header">
+              <h1>MY_SKILLS</h1>
+            </div>
+            <p class="my-skills-content">
+              Here are my skills at the time of creating this portfolio. Of course I'm not an expert in either, but I'm still learning and gaining new knowledge. I just love to learn new stuff.</p>
+            <p class="my-skills-content">If you would like to hire me, please use the contact form and I will provide you with all the necessary information, including my current CV. You can also drop a line directly to my email: <a href="mailto:slawomir.kasprzak78@gmail.com" class="email">slawomir.kasprzak78@gmail.com</a></p>
             <div id="myCanvasContainer">
               <canvas id="myCanvas" width="922" height="400">
               <p>Your browser is too old, please upgrade.</p>
@@ -444,26 +460,56 @@
               </ul>
             </div>
           </div>
-          <div class="col-xs-4">
-            <p>
-              Here are my skills at the time of creating this portfolio. Of course I'm not an expert in either, but I'm still learning and gaining new knowledge.</p>
+          <div class="col-md-6">
+            <div class="page-header">
+              <h1>CONTACT_ME</h1>
+            </div>
+            <form action="https://formspree.io/slawomir.kasprzak78@gmail.com" method="POST">
+              <div class="field half first">
+                <label for="name">Name *</label>
+                <input type="text" name="name" id="name" required="required" data-error="Name is required." placeholder="Your Name">
+                <div class="help-block with-errors"></div>
+              </div>
+              <div class="field half">
+                <label for="email">Email *</label>
+                <input type="email" name="_replyto" id="email" required="required" data-error="Valid email is required." placeholder="your@email.com">
+                <div class="help-block with-errors"></div>
+              </div>
+              <div class="field">
+                <label for="message">Message *</label>
+                <textarea name="message" id="message" rows="6" required="required" data-error="Valid email is required." placeholder="Lorem ipsum dolor..."></textarea>
+                <div class="help-block with-errors"></div>
+              </div>
+              <ul class="actions">
+                <input type="hidden" name="_next" value="#" />
+                <li><input type="submit" value="Send Message" class="special"></li>
+                <li><input type="reset" value="Clear"></li>
+              </ul>
+            </form>
           </div>
         </div>
       </div>
     </section>
-    <footer>
-      <div class="row">
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
 
+          </div>
+          <div class="col-md-4"></div>
+        </div>
       </div>
-    </footer>
+    </section>
   </div>
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
   <script>
     /*jslint browser:true */
-    window.jQuery || document.write('<script src="js/vendor/jquery-2.2.4.min.js "><\/script>');
+    window.jQuery || document.write('<script src="js/vendor/jquery-2.2.4.min.js"><\/script>');
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+
+  whenInViewport.min.js
   <!-- <script src="js/decomp.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.1/svg.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
@@ -471,8 +517,9 @@
   <script src="js/matter_script.js"></script> -->
   <script src="js/vendor/bootstrap.min.js"></script>
   <script src="http://www.goat1000.com/jquery.tagcanvas.min.js?2.9"></script>
-  <script src="js/typed.js "></script>
+  <script src="js/typed.js"></script>
   <script src="https://unpkg.com/jquery-aniview/dist/jquery.aniview.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
   <!-- <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script> -->
   <!-- typed.js below -->
   <script>
